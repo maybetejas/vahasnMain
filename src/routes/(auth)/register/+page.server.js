@@ -1,8 +1,7 @@
 import PocketBase from 'pocketbase';
 import bcrypt from 'bcrypt'
 import axios from 'axios';
-import { generateOtp } from '$lib/utils.js'
-import { DB_ROUTE } from '$env/dynamic/public'
+import { PUBLIC_DB_URL } from '$env/static/public'
 import { redirect } from '@sveltejs/kit';
 
 export const actions = {
@@ -11,9 +10,9 @@ export const actions = {
         const formData = await request.formData();
         const name = formData.get('name');
         const contact = formData.get('contact');
-        const password = formData.get('confirmPassword');
+        const car = formData.get('car');
        
-        const pb = new PocketBase('http://127.0.0.1:8090')
+        const pb = new PocketBase(PUBLIC_DB_URL)
 
         try {
             const record = await pb.collection('users').getFirstListItem(`contact="${contact}"`);
@@ -31,10 +30,9 @@ export const actions = {
         const data = {
             name,
             userAuthToken: crypto.randomUUID(),
-            passwordHash: await bcrypt.hash(password, 10),
+            car: car,
             contact,
             otp,
-            role: "test"
         };
      
     

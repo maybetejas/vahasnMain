@@ -12,8 +12,6 @@
 
 	export let data;
 </script>
-
-<h1>{data.coi}</h1>
 <main class="h-screen w-full flex items-start justify-center">
 	<form
 		method="POST"

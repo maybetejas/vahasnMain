@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-/** @type {import('@sveltejs/kit').Handle} */
+import { PUBLIC_DB_URL } from '$env/static/public';
 
 
 export async function handle({ event, resolve }) {
@@ -11,10 +11,9 @@ export async function handle({ event, resolve }) {
         return await resolve(event)
     }
     
-    const pb = new PocketBase('http://127.0.0.1:8090');
-
- 
-        const user = await pb.collection('users').getFirstListItem(`userAuthToken="${session}"`);
+    
+    const pb = new PocketBase(PUBLIC_DB_URL);
+    const user = await pb.collection('users').getFirstListItem(`userAuthToken="${session}"`);
 
 
     if (user) {

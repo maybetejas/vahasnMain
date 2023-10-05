@@ -2,4 +2,6 @@
 	export let data;
 </script>
 
-<h1 class="absolute top-2/4">You made it!</h1>
+<main class="w-full h-1/2">
+	<img src="tp.gif" alt="" class="w-full" />
+</main>

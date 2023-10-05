@@ -5,17 +5,18 @@
 
 	let name = '';
 	let contact = '';
-	let password = '';
-	let confirmPassword = '';
+	let car = 'Select a car';
 
 	let nameValid = false;
 	let contactValid = false;
-	let passwordValid = false;
 
 	$: {
 		nameValid = isValidName(name);
 		contactValid = isValidContact(contact);
-		passwordValid = isValidPassword(password, confirmPassword);
+	}
+
+	function selectCar(option) {
+		car = option;
 	}
 </script>
 
@@ -45,6 +46,21 @@
 					</span>
 				{/if}
 			</div>
+			<div class="w-full fleex flex-col">
+				<details class="dropdown mb-32">
+					<summary class="m-1 btn">{car}</summary>
+					<ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+						<li>
+							<a on:click={() => selectCar('hatchback')}>Hatchback (Swift, Wagonr)</a>
+						</li>
+						<li><a on:click={() => selectCar('sedan')}>Sedan (City, Civic)</a></li>
+						<li>
+							<a on:click={() => selectCar('suv')}>SUV (Fortuner, Innova)</a>
+						</li>
+					</ul>
+				</details>
+				<input type="hidden" name="car" bind:value={car} />
+			</div>
 			<div class="w-full">
 				<label class="label">
 					<span class="label-text">Contact</span>
@@ -59,42 +75,10 @@
 						class="input input-bordered w-full"
 					/>
 				</label>
+
 				{#if contact !== ''}
 					<span class={contactValid ? 'text-green-500' : 'text-red-500'}>
 						{contactValid ? 'Valid Contact' : 'Invalid Contact'}
-					</span>
-				{/if}
-			</div>
-			<div class="w-full">
-				<label class="label">
-					<span class="label-text">Password</span>
-				</label>
-				<label class="input-group">
-					<span>Password</span>
-					<input
-						bind:value={password}
-						name="password"
-						type="password"
-						class="input input-bordered w-full"
-					/>
-				</label>
-			</div>
-			<div class="w-full">
-				<label class="label">
-					<span class="label-text">Confirm Password</span>
-				</label>
-				<label class="input-group">
-					<span>Confirm Password</span>
-					<input
-						bind:value={confirmPassword}
-						name="confirmPassword"
-						type="password"
-						class="input input-bordered w-full"
-					/>
-				</label>
-				{#if password !== ''}
-					<span class={passwordValid ? 'text-green-500' : 'text-red-500'}>
-						{passwordValid ? 'Passwords match' : 'Passwords do not match'}
 					</span>
 				{/if}
 			</div>

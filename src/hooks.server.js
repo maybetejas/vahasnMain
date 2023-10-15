@@ -18,9 +18,11 @@ export async function handle({ event, resolve }) {
 
     if (user) {
         event.locals.user = {
+            id: user.id,
             name: user.name,
             contact: user.contact,
-            role: user.role
+            car: user.car,
+            address: user.address
         }
     }
 

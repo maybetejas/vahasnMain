@@ -1,17 +1,14 @@
 <script>
-	import { isValidName, isValidContact, isValidPassword } from '$lib/utils.js';
+	import { isValidContact } from '$lib/utils.js';
 
 	export let form;
 
-	let name = '';
+	let address = '';
 	let contact = '';
 	let car = 'Select a car';
-
-	let nameValid = false;
 	let contactValid = false;
 
 	$: {
-		nameValid = isValidName(name);
 		contactValid = isValidContact(contact);
 	}
 
@@ -28,23 +25,18 @@
 		<div class="form-control w-full">
 			<div class="w-full">
 				<label class="label">
-					<span class="label-text">Full Name</span>
+					<span class="label-text">Enter full address</span>
 				</label>
 				<label class="input-group">
-					<span>Name</span>
+					<span>Address</span>
 					<input
-						bind:value={name}
-						name="name"
+						bind:value={address}
+						name="address"
 						type="text"
-						placeholder="Hritvik kadu"
 						class="input input-bordered w-full"
 					/>
 				</label>
-				{#if name !== ''}
-					<span class={nameValid ? 'text-green-500' : 'text-red-500'}>
-						{nameValid ? 'Valid Name' : 'Invalid Name'}
-					</span>
-				{/if}
+				
 			</div>
 			<div class="w-full fleex flex-col">
 				<details class="dropdown mb-32">

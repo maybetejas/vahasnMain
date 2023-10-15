@@ -93,3 +93,175 @@ export const greetings = [
   'ନମସ୍କାର', // Odia
   'హలో', // Telugu
 ];
+
+export const servicesList = [
+  {
+    id: 1,
+    svg: 'location.svg',
+    name: "Rinseless wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "Tyres",
+      "Windows",
+      "Panels",
+      "lights",
+      "Rims"
+    ]
+  },
+  {
+    id: 2,
+    svg: 'location.svg',
+    name: "Waterless wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "Tyres",
+      "Windows",
+    ]
+  },
+  {
+    id: 3,
+    svg: 'location.svg',
+    name: "2 Bucket wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "lights",
+      "Rims",
+      "Rims",
+      "Rims",
+      "Rims",
+    ]
+  },
+  {
+    id: 4,
+    svg: 'location.svg',
+    name: "2 Bucket wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "lights",
+      "Rims",
+      "Rims",
+      "Rims",
+      "Rims",
+    ]
+  },
+  {
+    id: 5,
+    svg: 'location.svg',
+    name: "2 Bucket wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "lights",
+      "Rims",
+      "Rims",
+      "Rims",
+      "Rims",
+    ]
+  },
+  {
+    id: 6,
+    svg: 'location.svg',
+    name: "2 Bucket wash",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "lights",
+      "Rims",
+      "Rims",
+      "Rims",
+      "Rims",
+    ]
+  },
+]
+
+
+export const subscriptions = [
+  {
+    id: 7,
+    svg: 'location.svg',
+    name: "weekly",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "Tyres",
+      "Windows",
+      "Panels",
+      "lights",
+      "Rims"
+    ]
+  },
+  {
+    id: 8,
+    svg: 'location.svg',
+    name: "bi-weekly",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "Tyres",
+      "Windows",
+    ]
+  },
+  {
+    id: 9,
+    svg: 'location.svg',
+    name: "Monthly",
+    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    services: [
+      "lights",
+      "Rims",
+      "Rims",
+      "Rims",
+      "Rims",
+    ]
+  },
+]
+
+export function getUserLocation() {
+  return new Promise((resolve, reject) => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const userLocation = { lat: latitude, lng: longitude };
+          resolve(userLocation);
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              reject('User denied the request for Geolocation.');
+              break;
+            case error.POSITION_UNAVAILABLE:
+              reject('Location information is unavailable.');
+              break;
+            case error.TIMEOUT:
+              reject('The request to get user location timed out.');
+              break;
+            default:
+              reject('An unknown error occurred.');
+              break;
+          }
+        }
+      );
+    } else {
+      reject('Geolocation is not supported by this browser.');
+    }
+  });
+}
+
+export function formatAddress(address) {
+    if (address) {
+      const words = address.split(' ');
+      if (words.length > 1) {
+        return words[0] + ' ...';
+      } else {
+        return words[0];
+      }
+    } else {
+      return 'Set location';
+    }
+  }
+
+
+//stores
+
+import { writable } from 'svelte/store';
+
+export const currentCar = writable(''); // Initialize with an empty string or the default car value
+export const currentLocation = writable(''); // Initialize with an empty string or the default car value

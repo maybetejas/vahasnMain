@@ -8,7 +8,7 @@ export const actions = {
 
     getOtp: async ({ request, cookies }) => {
         const formData = await request.formData();
-        const name = formData.get('name');
+        const address = formData.get('address');
         const contact = formData.get('contact');
         const car = formData.get('car');
        
@@ -28,7 +28,7 @@ export const actions = {
 
         const otp = Math.floor(1000 + Math.random() * 9000).toString();
         const data = {
-            name,
+            address,
             userAuthToken: crypto.randomUUID(),
             car: car,
             contact,

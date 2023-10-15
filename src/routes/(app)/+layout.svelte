@@ -47,11 +47,9 @@
 							</form>
 						</li>
 						<li><a href="/bookings">bookings</a></li>
-						<li><a href="/washer">washer</a></li>
 					{:else}
 						<li><a href="/login">Login</a></li>
 						<li><a href="/bookings">bookings</a></li>
-						<li><a href="/washer">washer</a></li>
 					{/if}
 				</ul>
 			</div>

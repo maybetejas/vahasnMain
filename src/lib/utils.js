@@ -98,79 +98,78 @@ export const servicesList = [
   {
     id: 1,
     svg: 'location.svg',
-    name: "Rinseless wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Towing",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "Tyres",
-      "Windows",
-      "Panels",
-      "lights",
-      "Rims"
+      "Emergency Towing",
+      "Flatbed Towing",
+      "Long-Distance Towing",
+      "Motorcycle Towing",
+      "Off-Road Recovery"
     ]
   },
   {
     id: 2,
     svg: 'location.svg',
-    name: "Waterless wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Fuel/EV Recharge",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "Tyres",
-      "Windows",
+      "Gasoline Refueling",
+      "Electric Vehicle Charging",
+      "Fuel Delivery",
+      "Battery Jumpstart"
     ]
   },
   {
     id: 3,
     svg: 'location.svg',
-    name: "2 Bucket wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Puncture Repair",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "lights",
-      "Rims",
-      "Rims",
-      "Rims",
-      "Rims",
+      "Flat Tire Repair",
+      "Spare Tire Installation",
+      "Tire Replacement",
+      "Tire Pressure Check"
     ]
   },
   {
     id: 4,
     svg: 'location.svg',
-    name: "2 Bucket wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Car Breakdown Assistance",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "lights",
-      "Rims",
-      "Rims",
-      "Rims",
-      "Rims",
+      "Vehicle Diagnosis",
+      "Engine Troubleshooting",
+      "Jumpstart",
+      "Minor Repairs"
     ]
   },
   {
     id: 5,
     svg: 'location.svg',
-    name: "2 Bucket wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Accident Assistance",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "lights",
-      "Rims",
-      "Rims",
-      "Rims",
-      "Rims",
+      "Collision Recovery",
+      "Emergency Medical Aid",
+      "Police Report Assistance",
+      "Legal Support"
     ]
   },
   {
     id: 6,
     svg: 'location.svg',
-    name: "2 Bucket wash",
-    link: "https://www.youtube.com/embed/6F2XzwW4X-I?si=pTeyw0VMOgSDQhma",
+    name: "Test Service",
+    link: "https://www.youtube.com/embed/sRs2o36a1Us?si=9nmSCVpORpvzpYQt",
     services: [
-      "lights",
-      "Rims",
-      "Rims",
-      "Rims",
-      "Rims",
+      "Test Service 1",
+      "Test Service 2",
+      "Test Service 3",
+      "Test Service 4"
     ]
-  },
-]
+  }
+];
+
 
 
 export const subscriptions = [
